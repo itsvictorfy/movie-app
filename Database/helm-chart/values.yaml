@@ -1,0 +1,13 @@
+releaseName: postgres-db
+dbName: "bW92aWVzREI="  # Base64-encoded value: "moviesDB"
+dbUser: "cG9zdGdyZXM="    # Base64-encoded value: "admin"
+dbPassword: "c3FsQWRtaW4="  # Base64-encoded value: "sqlAdmin"
+replicaCount: 1
+image: "h3xbar/final-proj:psgrsql1"
+imagePullPolicy: Always
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+persistence:
+  size: 4Gi

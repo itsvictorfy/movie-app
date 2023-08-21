@@ -1,0 +1,21 @@
+namespace: dev
+
+replicaCount: 1
+
+image:
+  repository: itsvictorfy/final-proj
+  tag: d343aa5
+  pullPolicy: IfNotPresent
+
+spec:
+  replicaCount: 1
+
+service:
+  type: LoadBalancer
+  port: 8080
+
+database:
+  host: postgresdb.database.svc.cluster.local
+  dbName: "bW92aWVzREI="  # Base64-encoded value: "moviesDB"
+  dbUser: "cG9zdGdyZXM="    # Base64-encoded value: "postgres"
+  dbPassword: "c3FsQWRtaW4="  # Base64-encoded value: "sqlAdmin"

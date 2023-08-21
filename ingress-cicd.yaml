@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cicd-ingress
+  namespace: cicd
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        backend:
+          service:
+            name: jenkins
+            port:
+              number: 8080
+      - pathType: Prefix
+        path: /cd
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
